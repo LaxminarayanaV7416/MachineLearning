@@ -1,0 +1,71 @@
+array => a 
+	a.shape
+	a.ndim
+	a.dtype | a.dtype.name
+	a.size
+	a.itemsize
+	a.reshape(2,3)
+	a.dot(b)
+	a.sum(axis=)
+	a.sub(axis=)
+	a.min(axis=)
+	a.max(axis=)
+	a.T
+	a.resize
+	a.copy()
+	a.astype
+
+np.array_split(X,n_batches)
+np.transpose(a) #to get transposed matrix	
+np.append(a,b,axis=)
+np.insert(array,index,values,axis=)
+np.matmul()
+np.multiply(a,b)
+np.empty((2,3))
+np.zeros((2,3))
+np.ones((2,3))
+np.full(shape,number) -> returns shape of matric with number filled equalent to np.ones * number
+np.arange
+np.linspace(0,2,9) #for linear spaced of values from 0 to 2 and total 9 values
+np.exp(a)
+np.sqrt(a)
+np.add(a,b)
+np.fromfunction(function/lambda,shape==(5,4),dtype=int)
+np.vstack((a,b))
+np.hstack((a,b))
+np.concatenate((a,b))
+np.hsplit(a,3) | np.hsplit(a,(3,4))
+np.vsplit(a,3) | np.vsplit(a,(3,4))
+np.where(codition)
+np.argsort(a) #Returns the indices that would sort an array.
+np.argmax(a,axis=)
+np.argmin(a,axis=)
+np.cov(a) #covarinace
+np.std(a) #standard deviation
+np.var(a) #variance
+np.mean(a) #mean
+np.cross(a) #cross product
+np.vdot(a,b) #vector dot product
+np.save(filename, allow_pickle=True/False, array) #note it saves as .npy filename
+np.load(filename.npy)
+np.savetxt(filename, arr=array, delimiter=',')
+np.loadtxt(filename,dtype,delimiter=',')
+np.ravel(a) #flattens array to 1D array
+np.logspace(start,stop,num=50,endpoint,base,dtype)
+np.c_(array1,...) -> column concatinator
+np.r_(array1,...) -> row concatinator
+np.eye(number) -> returns identity array with shape (number,number)
+np.newaxis -> used to reshpae perfectly
+
+
+np.linalg -> #all linear algebra operations
+	np.linalg.svd(a) #singular value decomposition
+	np.linalg.inv(a) #for inverse of matrix
+	np.linalg.solve(a,b) #for solving two matrixes
+	np.linalg.eig(a) #for eigen values and eigne vectors
+	np.linalg.det(a) #for determinent opf matrix or array
+	np.linalg.matrix_rank(a) #for matrix rank
+		
+np.matrix -> #all matrix operations
+	
+np.set_printoptions(threshold=sys.maxsize) #sys modules should be imported	

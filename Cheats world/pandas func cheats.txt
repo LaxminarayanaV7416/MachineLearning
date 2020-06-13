@@ -1,0 +1,67 @@
+pd.DataFrame ->
+	df.info()
+	df['attribute_name'].value_counts()
+	df.shape
+	df.size
+	df.head()
+	df.tail()
+	df.values -. return numpy array representation of object
+	df.describe()
+	df.to_numpy()
+	df.dtypes 
+	df.columns #for list use df.column.array
+	df.index #for list use df.index.array
+	df.T
+	df.loc -> slicing function can use column names and index names along with index and columns numbers
+	df.iloc -> slicing function can use only index and column index numbers
+	df.at -> Access the single values at particular index and column can use both index numbers and names/ Can assign new value at accessed value
+	df.iat ->Similar to df.at but only index numbers
+	df.sort_values(by=[])
+	df.sort_index() -> use simple trick axis=1 to sort columns based on column names
+	df.copy()
+	df.reindex -> for reindexing the dataframe
+	df.dropna(how)
+	df.fillna(value,method=['ffill','bfill','pad','backfill'])
+	df.interpolate #fills smartly comparing the nearby column values
+	df.apply ->
+	df.str -> and apply all string methods here and its (str+re library together)
+	df.assign(newcolumn=function_to_apply)
+	df.iterrows  #for iterations use itertuples
+	df.itertuples #for iteration using named tuples
+	df.agg #its used to apply aggregate functions and custom functions on dataframe
+	df.drop #drop particular column or row mention in axis
+	df.rename(columns={'key':'value'},index={#})
+	df.where(condition) #condition in brackets
+	df.query #to write sql like queries but without select
+
+
+List of binary comparisions ->
+	df.gt(df2) -> greater than
+	df.lt(df2) -> less than
+	df.eq(df2) -> equalent to
+	df.ne(df2) -> not equalent to
+list of reductions ->
+	df.*[bool(),	any(),	all(),	empty]	
+	
+descriptive statistics ->
+	df.mean(axis)
+	df.quantile(axis)
+	df.std()
+	df.median(axis)
+	df.mode(axis)
+	df.rank(axis)
+	
+pd.Series ->
+pd.groupby ->
+	gdf.get_group(value) -> for value,grouped_df in pd.groupby()
+	gdf.aggregate(np.sum)
+	gdf.groups()
+	
+	
+pd.isna ->
+pd.concat -> for concatinating two dataframes use axis to specify how to combine dataframes
+pd.merge -> for use of SQL Joins kinda mechanism in dataframes
+
+pd.set_option('option_name',Value or True/Flase)
+
+pd.qcut -> Quantile based discretisation

@@ -1,0 +1,177 @@
+#!__imp__=
+    a. Consistency - All objects share a consisitent and simple interface.
+        1. Estimators - Any Object that can estimate some parameters based on dataset is called an estimator (eg., Imputer is an estimator).
+        the estimator itself is performed by 'fit()' method and it takes only dataset as a parameter (or two for supervised learning algorithm;
+        the second dataset contains label). Any other parameters needed to guide estoamtion process is considered as 'Hyperparameters' (such as
+        Imputer's Strategy), and must be set as an instance varible during its construction of Estimator class. 
+        2. Transformers - Some estimators (such as imputer) can also transform a dataset, these are called transformers. once again, the sklearn 
+        API is quite simple the transformation is performed by the 'transform()' method with the dataset to transform as a parameter. It returns
+        the tranformed dataset. this transformation generally relies on the learned parameters, as is the case for imputer. all strategy also have
+        a convenience method called 'fit_transform()' which is equivalent to calling fit() and then transform() (but sometimes fit_transform()
+        is optimised and runs much faster).
+        3. Predictors - Finally some estimators of capable of making predictions given a dataset; they are called predictors. for example the
+        LinearRegression model is a predictor it has a 'predict()' method that takes a dataset of new instance and returns a dataset of corresponding
+        prediction, it also has a 'score()' method that measures the quality of prediction given in the test dataset.
+
+    b. Inspection - All the estimator's Hyperparameters are accessible directly via public instance varibales (eg., imputer.strategy) and all the
+    estimators learned parameters ar also accessible via public instance varibales with an underscore suffix (eg., imputer.statistics_).
+    
+    c. Nonproliferation of classes - datasets are represented as numpy array or scipy sparse matrices, instead of homemade classes. Hyperparameters
+    are just regular python string or number.
+    
+    d. Composition - Existing building blocks are reused as much as possible. eg., it is easy to create a pipeline estimator from an arbitrary sequence
+    of transformers followed by a final estimator as we will see.
+    
+    e. Sensible Defaults - Scikit learn provides reasonable default values for most parameters, making it easy to create a baseline working system quickly.
+
+
+from sklearn.base import =>
+    1. BaseEstimator
+    2. TransformerMixin
+    3. RegressorMixin
+    4. ClassifierMixin
+    5. ClusterMixin
+    6. OutlierMixin -----> Not there in API
+    7. ** clone -> Constructs a new estimator with the same parameters.
+    8. ** is_classifier
+    9. ** is_regressor
+
+from sklearn.cluster import =>
+    1. KMeans
+    2. MiniBatchKMeans
+
+from sklearn.datasets import =>
+    1. load_iris
+    2. load_diabetes
+    3. load_breast_cancer
+    4. load_digits
+    5. load_boston
+    6. fetch_mldata -> fetch_mldata('MNIST original')
+    7. make_regression -> to construct regression dataset
+    8. make_classification -> to construct classification dataset
+    9. make_blobs -> to construct clustering kinda dataset
+
+from sklearn.decomposition import =>
+    1. PCA 
+        # explained_variance_ratio_
+        # inverse_transform
+    2. IncrementalPCA
+    3. KernalPCA
+
+from sklearn.ensemble import =>
+    1. RandomForestClassifier
+    2. VotingClassifier
+    3. BaggingClassifier
+    4. AdaBoostClassifier
+    5. RandomForestRegressor
+    6. GradientBoostingRegressor
+    7. AdaBoostRegressor
+    8. BaggingRegressor
+    9. GradientBoostingClassifier
+
+from sklearn.feature_selection import =>
+    1. SelectFromModel
+    2. chi2
+
+from sklearn.impute import =>
+    1. SimpleImputer
+    2. IterativeImputer
+    3. KNNImputer
+
+from sklearn.linear_model import =>
+    1. LinearRegression
+        # intercept_
+        # coef_
+    2. LogisticRegression
+    3. RandomizedLogisticRegression -----> Not there in API
+    4. SGDRegressor -> (Stochastic gradient descent)
+    5. SGDClassifier
+    6. Ridge
+    7. Lasso 
+    8. ElasticNet
+
+from sklearn.manifold import =>
+    1. LocallyLinearEmbedding
+
+from sklearn.metrics import =>
+    Classification metrics
+        1. ** accuracy_score
+        2. ** classification_report
+        3. ** confusion_matrix
+        4. ** precision_score
+        5. ** recall_score
+        6. ** f1_score
+        7. ** precision_recall_curve
+        8. ** roc_curve
+        9. ** roc_auc_score
+    Regression metrics
+        10. ** mean_absolute_error
+        11. ** mean_squared_error
+        12. ** r2_score
+    Clustering metrics
+        13. ** adjusted_rand_score
+        14. ** homogeneity_score
+        15. ** v_measure_score
+
+from sklearn.model_selection import =>
+    Splitter Classes
+        1. StratifiedShuffleSplit
+        2. StratifiedKFold
+        3. KFold
+    Hyper-parameter optimizers
+        4. GridSearchCV
+        5. RandomizedSearchCV
+    Model validation
+        6. ** train_test_split
+        7. ** cross_val_score
+        8. ** cross_val_predict
+        9. ** cross_validate
+        10. ** learning_curve
+
+from sklearn.multiclass import =>
+    1. OneVsOneClassifier
+    2. OneVsRestClassifier
+
+from sklearn.multioutput import =>
+    1. MultioutputRegressor
+    2. MultioutputClassifier
+
+from sklearn.naive_bayes import =>
+    1. BernoulliNB
+    2. CategoricalNB
+    3. GaussianNB
+    4. MultinomialNB
+
+from sklearn.neighbors import =>
+    1. KNeighborsClassifier
+    2. KNeighborsRegressor
+
+from sklearn.pipeline import =>
+    1. Pipeline
+    2. FeatureUnion
+    3. Parallel -----> Not there in API
+
+from sklearn.preprocessing import =>
+    1. Imputer -----> Not there in API / Try seeing Imputer seperate method of classes
+    2. LabelBinarizer
+    3. LabelEncoder
+    4. MultiLabelBinarizer
+    5. Normalizer
+    6. OneHotEncoder
+    7. OrdinalEncoder
+    8. StandardScaler
+    9. MinMaxScaler
+    10. MaxAbsScaler
+    11. PolynomialFeatures
+        # fit_transform()
+
+from sklearn.svm import =>
+    1. LinearSVC
+    2. SVC 
+    3. LinearSVR 
+    4. SVR 
+
+from sklearn.tree import =>
+    1. DecisionTreeClassifier
+    2. ** export_graphviz
+    3. DecisionTreeRegressor

@@ -1,0 +1,15 @@
+Quantitative Data (Numerical data) -> Data consists of numerical statements (Numeric Based) eg. Age, weight, etc.,
+	1.	Discrete data - represent items that can be counted; they take on possible values that can be listed out. The list of possible values may be fixed (also called finite).
+	2.	Continuous data - represent measurements; their possible values cannot be counted and can only be described using intervals on the real number line. For example, the exact amount of gas purchased at the pump for cars with 20-gallon tanks would be continuous data from 0 gallons to 20 gallons, represented by the interval [0, 20].
+	
+Qualitative Data (categorical data) -> Data consists of descriptive statements (Text Based) eg. Person Name,  person’s gender, etc.,
+
+Four types of data
+	1.	categorical 
+		a.	Nominal data
+		b.	Ordinal data
+	2.	Numerical
+		a.	Interval data
+		b.	Ratio data
+		
+Numerical data => These data have meaning as a measurement, such as a person’s height, weight, IQ, or blood pressure

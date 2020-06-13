@@ -1,0 +1,153 @@
+Types of plots:
+    1. Bar - Make a bar plot.
+    2. Barh - Make a horizontal bar plot.
+    3. Boxplot - Make a box and whisker plot.
+    4. Hist - Plot a histogram.
+        # bins
+        # alpha
+        # color
+        # edgecolor
+        # normed    
+    5. hist2d - Make a 2D histogram plot.
+        # bins
+        # cmap
+    6. Pie - Plot a pie chart.
+    7. Plot - Plot lines and/or markers to the Axes.
+        # linestyle
+        # color
+        # markersize
+        # linewidth
+        # markerfacecolor
+        # markeredgecolor
+        # markeredgewidth
+    8. Polar - Make a polar plot.
+    9. Scatter - Make a scatter plot of x vs y.
+        # marker
+        # alpha
+        # s -> size
+        # c -> color
+        # cmap = 'viridis'
+    10. Stackplot - Draws a stacked area plot.
+    11. Stem - Create a stem plot.
+    12. Step - Make a step plot.
+    13. Quiver - Plot a 2-D field of arrows.
+    14. Errorbar
+        E.g., plt.errorbar(x, y, yerr=dy, fmt='o', color='black', ecolor='lightgray', elinewidth=3, capsize=0);
+    15. Contour - to make contour plots 
+        *** Note - Contour is 2D plot but takes 3D arguments namely x,y,z axis and level argument to make it rich(optional)
+    16 Hexbin - two-dimensional histogram creates a tessellation of squares across the axes.
+        # cmap
+        # gridsize
+
+for 3D plotting:
+    from mpl_toolkits import mplot3d
+        1. plot3D
+        2. scatter3D
+        3. contour3D
+        4. plot_wireframe
+        5. plot_surface
+
+ColorMap list:
+    1. Blues
+    2. viridis
+    3. RdBu
+    4. PuOr
+    5. rainbow
+    6. jet
+    7. cubehelix
+
+Image functions:
+    1. Imread - Read an image from a file into an array.
+    2. Imsave - Save an array as in image file.
+    3. Imshow - Display an image on the axes.
+
+Axis functions:
+    1. Axes -  Add axes to the figure.
+    2. Text -  Add text to the axes.
+    3. Title -  Set a title of the current axes.
+    4. Xlabel -  Set the x axis label of the current axis.
+    5. Xlim -  Get or set the x limits of the current axes.
+    6. Xscale -  Set the scaling of the x-axis.
+    7. Xticks -  Get or set the x-limits of the current tick locations and labels.
+    8. Ylabe -  Set the y axis label of the current axis.
+    9. Ylim -  Get or set the y-limits of the current axes.
+    10. Yscale -  Set the scaling of the y-axis.
+    11. Yticks -  Get or set the y-limits of the current tick locations and labels.
+
+Figure functions:
+    1. Figtext - Add text to figure.
+    2. Figure - Creates a new figure.
+    3. Show - Display a figure.
+    4. Savefig - Save the current figure.
+    5. Close - Close a figure window.
+
+symbols => - , –, -., , . , , , o , ^ , v , < , > , s , + , x , D , d , 1 , 2 , 3 , 4 , h , H , p, | , _
+    1. ‘.’ Point marker
+    2. ‘o’ Circle marker
+    3. ‘x’ X marker
+    4. ‘D’ Diamond marker
+    5. ‘H’ Hexagon marker
+    6. ‘s’ Square marker
+    7. ‘+’ Plus marker
+    8. ‘-‘ Solid line
+    9. ‘—‘ Dashed line
+    10. ‘-.’ Dash-dot line
+    11. ‘:’ Dotted line
+
+colors => b, g, r, c, m, y, k, w
+
+import matplotlib.pyplot as plt 
+    1. fig = plt.figure()
+    2. fig, (ax,..) = plt.subplots(2,2) -> here are some kwargs for subplots
+        # sharex='col'
+        # sharey='row'
+        *** Note - for not displaying xlabels and y labels use
+                ax[i, j].xaxis.set_major_locator(plt.NullLocator())
+                ax[i, j].yaxis.set_major_locator(plt.NullLocator())
+                    parameters -    plt.MaxNLocator(no_of_ticks_you_wanna_see)
+                                    plt.NullLocator()
+                                    plt.MultipleLocator(value_how_you_wanna_split_labels)
+                                    plt.FuncFormatter(function_which_returns_string)
+    3. a1 = plt.subplot2grid(shape, location, rowspan, colspan)
+
+some tips:
+    • plt.xlabel() → ax.set_xlabel()
+    • plt.ylabel() → ax.set_ylabel()
+    • plt.xlim() → ax.set_xlim()
+    • plt.ylim() → ax.set_ylim()
+    • plt.title() → ax.set_title()
+    # ax.set(xlim=(0,10),ylim=(),..)
+
+Code snippets for matplotlib
+    import matplotlib.pytplot as plt
+        1. fig = plt.figure() -> to initialise the empty canvas for plotting or drawing graphs
+            # figsize = ( x_length , y_length )
+        2. ax = plt.axes((left, bottom, width, height)) -> to initialise the empty axes on canvas or figure created above
+            where left,bottom etc are dimensions with which u wanted tp create the axes on figure.
+            axes is used to create plots inside plots for more info visit 
+            https://matplotlib.org/3.1.0/gallery/subplots_axes_and_figures/axes_demo.html#sphx-glr-gallery-subplots-axes-and-figures-axes-demo-py
+            for 3D plotting use (projection='3d') as kwarg in plt.axes
+        2. plt.style.use('style_name') -> setting the style of the matplotlib
+        3. plt.style.available
+        4. fig.savefig('image_name.jpg') -> saving the plotted image
+        5. fig.canvas.get_supported_filetypes() -> gives list of file types supported for saving a figure
+        6. fig, ax = plt.subplots( #rows , #columns , ..) -. easiest way to do mutliple graph plots
+            we can use ax[index-row,index-col] for plotting, -> eg., ax[1,0].plot(x,y)
+        8. plt.legend() -> to turn on the legend of the graph.
+        9. plt.colorbar() -> to turn on the color bar on right of the graph
+            if x = plt.colorbar() then x.set_label('label_name')
+        10. plt.fill_between() -> Fill the area between two horizontal curves.
+            # x or y -> x or y to plot
+            # y1 or x1 -> with above respectively to plot such that this will be the starting point it will fill_between
+            # y2 or x2 -> with above respectively to plot such that this will be the ending point it will fill_between
+        11. plt.subplot -> for plotting in MATLAB style other than Object Oriented way
+        12. grid = plt.GridSpec(2, 3, wspace=0.4, hspace=0.3) -> for manuplating subplot using grid now we can use
+            these grid variable and indexs for plotting basically its 2 rows and 3 column grid lets see some code for idea.
+            -> plt.subplot(grid[0, 0]), plt.subplot(grid[0, 1:]), plt.subplot(grid[1, :2])
+            like above we can maniplate the subplot 
+            *** Note - its an MATLAB Style we will Object Oriented style in few takes.
+
+Miscellenous hacks:
+    1. fig.subplots_adjust(hspace=0.4, wspace=0.4) -> for spacing between subplots
+    2. plt.annotate -> refer documentation for annotations of graphs it quite easy or python datascience handbook page no 273
+

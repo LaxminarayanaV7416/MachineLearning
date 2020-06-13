@@ -1,0 +1,81 @@
+References >> "https://www.analyticsvidhya.com/glossary-of-common-statistics-and-machine-learning-terms/"
+
+1. What is Machine Learning?
+    -> A computer program is said to learn from Experience (E) with respect to some Task (T) and some Performance Measure
+    (P), if Performance on T, as measured by P, improves with experience E.
+    -> Experience is DATA.
+    -> Performance Measure is Accuracy, Precision, F1 Score, Recall.
+    -> Task is our end goal.
+
+2. Basic Terminology in Machine Learning.
+    -> Attribute = Column Name
+    -> Value = Instace of the column and row
+    -> Features = Attribute + Value
+    -> Labels -> Generally called outputs present in DATA
+    -> Target 
+    -> Stratified Data = Sample data which represent the entire population. eg., in etire population of books we have 
+        63% Maths and 37% Science then sample should also consist the same.
+    -> Dataframe = DataFrame is a 2-dimensional labeled data structure with columns of potentially different types.
+    -> Feature extraction
+    -> Cost Function
+    -> Learning Rate
+    -> Hyperparameters = parameters of learning algorithm not the model.
+
+
+3. Different Types of data?
+    -> Quantitative Data (Numerical data) -> Data consists of numerical statements (Numeric Based) eg. Age, weight, etc.,
+	    1.	Discrete data - represent items that can be counted; they take on possible values that can be listed out. The list of possible values may be fixed (also called finite).
+	    2.	Continuous data - represent measurements; their possible values cannot be counted and can only be described using intervals on the real number line. For example, the exact amount of gas purchased at the pump for 
+        cars with 20-gallon tanks would be continuous data from 0 gallons to 20 gallons, represented by the interval [0, 20].
+    -> Qualitative Data (categorical data) -> Data consists of descriptive statements (Text Based) eg. Person Name,  person's gender, etc.,
+    Further Deep:
+    1.	categorical 
+		a.	Nominal data
+		b.	Ordinal data
+	2.	Numerical
+		a.	Interval data
+		b.	Ratio data
+
+4. Different types of Machine Learning Systems?
+    -> Trained under Human Supervision:
+        1. Supervisied Learning 
+            a. Classification 
+            b. Regression
+                ALGORITHMS:
+                    >> K-Nearest Neighbors
+                    >> Linear Regression
+                    >> Logisitic Regression
+                    >> Support Vector Machines (SVM)
+                    >> Decision Trees
+                    >> Random Forests
+                    >> Neural Networks
+        2. Unsupervised Learning
+            a. Clustering
+            b. Visualization
+            c. Dimensionality Reduction
+            d. Assosciation Rule Learning
+                ALGORITHMS
+                    >> K-means 
+                    >> Hierarchial Clustering
+                    >> Principal Component Analysis (PCA)
+                    >> Kernal PCA 
+                    >> Locally Linear Embedding (LLE)
+                    >> t-Distributed Stochastic Neighbor Embedding (t-SNE)
+                    >> Apriori
+                    >> Eclat
+        3. Semi Supervisied Learning
+        4. Reinforcement Learning
+    -> Learning Incrementally on Fly:
+        1. Online Learning -> Out-of-core Learning and Learning Rate
+        2. Batch Learning / Offline Learning
+    -> Mechanism of Learning from data / How they generalise the data:
+        1. Instance Based Learning
+        2. Model Based Learning
+
+5. Main Challenges in Machine Learning:
+    -> Insufficient Quantity of Data
+    -> Non representative Training Data = Sampling Bias
+    -> Poor Quality Data
+    -> Irrelavant Features = Feature Engineering, Feature Selection, Feature extraction
+    -> Overfitting the Training Data = Regularisation
+    -> Testing and Validation data sets = Cross Validation

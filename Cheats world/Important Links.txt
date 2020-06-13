@@ -1,0 +1,10 @@
+Types of Data -> https://www.dummies.com/education/math/statistics/types-of-statistical-data-numerical-categorical-and-ordinal/
+Machine Learning Terminilogy -> "https://www.analyticsvidhya.com/glossary-of-common-statistics-and-machine-learning-terms/"
+
+https://www.fast.ai
+http://course18.fast.ai/ml
+https://course.fast.ai    
+https://github.com/jesstess/oreilly-intermediate-python
+https://github.com/EbookFoundation/free-programming-books
+https://github.com/gmarler/courseware-tnl
+https://github.com/ageron/handson-ml   

@@ -1,0 +1,52 @@
+import seaborn as sns =>
+    1. get_dataset_names()
+    2. load_dataset('name')
+    3. set() -> to change matplotlib graph to seaborn
+    4. despine() -> removing axes spines
+    5. axes_style -> printing it gives you inforamtion about axes
+    6. set_style('style_name',{'axes.edgecolor':'white'})
+        style names as follows
+            a. darkgrid
+            b. whitegrid
+            c. dark
+            d. white
+            e. ticks
+    7. color_palette(palette=None, n_colors=None, desat=None)
+        a. palette - nmae of palette
+        b. n_colors - no of colors in palette, default n_colors is 6
+        c. desat - Proportion to desaturate each color
+            lits of palette => [deep, muted, bright, pastel, dark, colorblind]
+    8. palplot(color_palette) -> which sets the color palette 
+    9. set_palette() -> similar to color_palette method
+    ========== Exploaratory Data Analysis ==============
+    10. distplot(data, bins=something, hist=bool, kde=bool) -> used for univariate data analysis
+        a. kde - kernal density estimator to be displayed or not
+        b. hist - histograms to be displayed or not
+    10. countplot(x='column_name_in_df',data=DataFrame, hue='column_name_in_df') -> used for univariate analysis for text kind data like gender, etc and 
+    also used for bivariate data analysis also for same text kinda data.
+    11. jointplot(x='column_name_in_df', y='column_name_in_df', data=dataframe, kind='scatter') -> used for bivariate data analysis
+        list of kind =. ['hex','kde','resid',]
+    12. pairplot(data, hue, palette, kind, diag_kind) -> used for multivariate data analysis
+        a. data - Data frame
+        b. hue - Variable in data to map plot aspects to different colors
+        c. palette - Set of colors for mapping the hue variable
+        d. kind - Kind of plot for the non-identity relationships. {‘scatter’, ‘reg’}
+        e. diag_kind - Kind of plot for the diagonal subplots . {‘hist’, ‘kde’}
+    ========== categorical Data Analysis ==============
+    13. stripplot(x='column_name_in_df', y='column_name_in_df', data=dataframe, hue='column_name_in_df',jitter=False) -> It 
+    represents the data in sorted order along any one of the axis.
+    14. swarmplot(x='column_name_in_df', y='column_name_in_df', data=dataframe, hue='column_name_in_df') -> This 
+    function positions each point of scatter plot on the categorical axis and thereby avoids overlapping points
+    ======== Some Miscellenous graphs ==========
+    15. boxplot(x='column_name_in_df', y='column_name_in_df', data=dataframe,hue='column_name_in_df') -> box plots with quartiles
+    16. violinplot(x='column_name_in_df', y='column_name_in_df', data=dataframe,hue='column_name_in_df') -> violinplots with quartiles
+    17. barplot(x='column_name_in_df', y='column_name_in_df', data=dataframe,hue='column_name_in_df')
+    18. pointplot(x='column_name_in_df', y='column_name_in_df', data=dataframe,hue='column_name_in_df')
+    19. scatterplot(x='column_name_in_df', y='column_name_in_df', data=dataframe,hue='column_name_in_df')
+    ======== regression graphs =========
+    20. regplot(x='column_name_in_df', y='column_name_in_df', data=dataframe) -> accepts the 
+    x and y variables in a variety of form ats including simple numpy arrays ,pandas Series objects, or as references 
+    to variables in a pandas DataFrame.
+    21. lmplot(x='column_name_in_df', y='column_name_in_df', data=dataframe) -> has data as a required parameter and the x
+    and y variables must be specified as strings. This data format is called “long-form” data
+    22. heatmap(df.corr(),annot=True) -> to plot correlation heatmap for better visualization.
