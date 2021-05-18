@@ -35,6 +35,7 @@
 * In mathematical optimization and decision theory, a loss function or cost function is nothing but when we map an event with algorithm current state we get a result which is actually comapred with the real world value which results in some loss or cost asscoaiated for the change in value with real world value. this is known as cost or loss function. 
 * <b>NOTE:</b> The terms cost and loss functions almost refer to the same meaning. ... The cost function is calculated as an average of loss functions. The loss function is a value which is calculated at every instance. So, for a single training cycle loss is calculated numerous times, but the cost function is only calculated once.
 <br><br>
+
 ***
 
 * ### Derivatives from calculus:  
