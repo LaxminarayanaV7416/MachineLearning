@@ -36,10 +36,12 @@
 * <b>NOTE:</b> The terms cost and loss functions almost refer to the same meaning. ... The cost function is calculated as an average of loss functions. The loss function is a value which is calculated at every instance. So, for a single training cycle loss is calculated numerous times, but the cost function is only calculated once.
 <br><br>
 ***
+
 * ### Derivatives from calculus:  
 * Let us understand how the derivatives work later we will see how the gradient descent algorithm is implemented. condiser a function f(a) is 3a, here if we want to find the slope (we usually do it by dividing height with width) or derivative with respect to 'a'. before that let us talk about slope first, let us assume that a=2 which gives f = 6, now we want to increase the by 0.5 i.e., a=2.5 now f= 7.5, when we plot this on graph we get to form a triangle between 6 and 7.5 where we slope by dividing height with width i.e., 3. this slope is common across all the values of a irrespective of smaller increase or decrease, this slope of line f(a) is known as derivative of f wrt a. NOTE: Derivatives means slope of line. in case of functions which involves square, cubic notations the slope is also fixed for eg f(x) = x^2 then the slope or derivative is 2x.
 <br><br>
 ***
+
 * ### Gradient Descent: 
 * Gradient descent is a first-order iterative optimization algorithm for finding a local minimum of a differentiable function. We hope to minimize the cost function, where we expect the minimal value would be global minima of the function we are trying to build.
 * In Gradient Descent Alpha is the learning rate, where alpha helps us to control how big the step we take while conquering to reach global minima or while updating the parameters. If learning rate is too small it will fail to converge, if alpha is too large the gradient descent will overshoot and diverge from the global minima.
