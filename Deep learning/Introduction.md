@@ -1,3 +1,8 @@
+```
+NPTEL URL : https://nptel.ac.in/courses/106/106/106106184/
+DEEPLEARNING.AI (COURSE 1) URL : https://www.youtube.com/watch?v=CS4cs9xVecg&list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0 
+KRISH NAIK DEEP LEARNING PLAYLIST : https://www.youtube.com/watch?v=9jA0KjS7V_c&list=PLZoTAELRMXVPGU70ZGsckrMdr0FteeRUi&index=2
+```
 ### Introduction to Deep Learning
 * AI is the new electricity, where one of the fields of AI is rising rapidly is deep learning.
 ***
@@ -32,20 +37,21 @@
 <br> 
 
 * Logistic Regression is used in binary classification, it is simply the linear regression where apply sigmoid function to linear regression since in logistic regression we are calculating the probability of the y being 1 given x (where y is a target variable and x is a input feature). NOTE: resulted value of sigmoid function lie between 0 and 1. Please refer link for sigmoid function [Sigmoid function](https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/#:~:text=The%20sigmoid%20activation%20function%20is,the%20range%200%20to%201. "Sigmoid Function")
+<br>
+***
 
-<br><br>
-* ### what is a cost function or loss function?
+* ### cost function or loss function:
 
 * In mathematical optimization and decision theory, a loss function or cost function is nothing but when we map an event with algorithm current state we get a result which is actually comapred with the real world value which results in some loss or cost asscoaiated for the change in value with real world value. this is known as cost or loss function. 
 
 * <b>NOTE:</b> The terms cost and loss functions almost refer to the same meaning. ... The cost function is calculated as an average of loss functions. The loss function is a value which is calculated at every instance. So, for a single training cycle loss is calculated numerous times, but the cost function is only calculated once.
-<br><br>
+<br>
 
 ***
 
 * ### Derivatives from calculus:  
 * Let us understand how the derivatives work later we will see how the gradient descent algorithm is implemented. condiser a function f(a) is 3a, here if we want to find the slope (we usually do it by dividing height with width) or derivative with respect to 'a'. before that let us talk about slope first, let us assume that a=2 which gives f = 6, now we want to increase the by 0.5 i.e., a=2.5 now f= 7.5, when we plot this on graph we get to form a triangle between 6 and 7.5 where we slope by dividing height with width i.e., 3. this slope is common across all the values of a irrespective of smaller increase or decrease, this slope of line f(a) is known as derivative of f wrt a. NOTE: Derivatives means slope of line. in case of functions which involves square, cubic notations the slope is also fixed for eg f(x) = x^2 then the slope or derivative is 2x.
-<br><br>
+<br>
 ***
 
 * ### Gradient Descent: 
@@ -54,6 +60,34 @@
 * In gradient descent when we are trying to compute the cost function we are looking at all the training examples, which is some times called as "Batch Gradient Descent"
 * if the gradient descent looks at smaller number of training examples from total examples called as "Mini Batch Gradient Descent".
 * Please read about Stochastic gradient descent.
+<br>
+
+***
+* ### Computation Graph:
+* A computational graph is a way to represent a math function in the language of graph theory. Outbound edges from an input node are weighted with that input value; outbound nodes from a function node are weighted by combining the weights of the inbound edges using the specified function. 
+* through computation graphs in deep learning Feeding forawrd and back propagation is implemented.
+* in backpropagation we will try to calculate the derivatives of all individual variables in function wrt loss function, such that we will come to know what value change will affect the most increase in loss function.
+* by above mentioned methodology we will be able to calculate the derivatives of of only one training example, for all training instances we need to run a for loop for m training examples and we need to calculate the derivatives and add all of them together and do need to divide the values obatained by number of training examples. this process require one more for loop for number of features f if f is so many we need to write for loop again. to avoid this we can use vectorization techniques.
+<br>
+
+***
+
+* ### Vectorization
+* It is the art of getting rid of for loops while calculating. so deep learning will use vectorization to minimize time.
+* its better to use dot product for multiplying and addition instead of writing a for loop and in python we can use numpy package where we can use np.dot where it is written in SIMD (single instruction multiple data) which is quite faster on CPU.
+<br>
+
+***
+* ### Neural Networks
+* A neural network is a network or circuit of neurons, or in a modern sense, an artificial neural network, composed of artificial neurons or nodes.
+* A neural network have input layer (where we pass in the features to the network), Hidden layer() and output layer (which produces the output). NOTE: we usually donot count input layer as a layer while counting the number of layers present inside the neural network.
+
+<br>
+
+* ### Why we use Non linear activation functions instead of Linear activation functions?
+* In deep neural networks we use non linear activation functions such as (Sigmoid, Tanh, ReLu, leaky ReLu, etc.,) before understanding why we use non linear activation function let us first understand what we use actiavtion function is this functions help neural network learn complex patterns in the data. if we use the linear activation function the neural network will learn only linear patterns only, so make neural network dig deep and learn complex patterns we use non linear activation function.
+
+<br>
 
 
 
